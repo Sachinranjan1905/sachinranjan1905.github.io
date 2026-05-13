@@ -1,243 +1,826 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>Sachin Ranjan | Software Developer Portfolio</title>
   <meta name="google-site-verification" content="Df9gi6N0jjxCQ6qt-o4KKd9wYYuyHVbN29xicxMQODs" />
-
-  <meta name="description" content="Sachin Ranjan - B.Tech CSE student, Software Developer skilled in C++, Java, Python, Backend Development and Machine Learning. IEEE Published Author. Portfolio and Projects.">
-
-  <meta name="keywords" content="Sachin Ranjan, Software Developer, Backend Developer, C++, Java, Python, Machine Learning, Portfolio, Quantum University">
-
+  <meta name="description" content="Sachin Ranjan — Java Engineer, DSA Expert, & AI Researcher. IEEE Published Author specializing in Computer Vision and Machine Learning.">
+  <meta name="keywords" content="Sachin Ranjan, Java, DSA, Machine Learning, AI, Computer Vision, Software Developer, IEEE">
   <meta name="author" content="Sachin Ranjan">
-
+  <meta name="theme-color" content="#0f172a">
+  
   <meta property="og:title" content="Sachin Ranjan | Software Developer Portfolio">
-  <meta property="og:description" content="Backend Developer | AI/ML Enthusiast | IEEE Published Author">
+  <meta property="og:description" content="Java | DSA | AI & Computer Vision | IEEE Published">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sachinranjan1905.github.io">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sachin Ranjan",
-    "url": "https://sachinranjan1905.github.io",
-    "sameAs": [
-      "https://github.com/Sachinranjan1905",
-      "https://www.linkedin.com/in/sachin-ranjan-8281a1329/"
-    ],
-    "jobTitle": "Software Developer",
-    "alumniOf": "Quantum University"
-  }
-  </script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #0f172a;
+      --secondary: #1e293b;
+      --accent-cyan: #06b6d4;
+      --accent-gold: #fbbf24;
+      --accent-purple: #a78bfa;
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #0f172a, #020617);
-      color: #e2e8f0;
+      font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--primary);
+      color: var(--text-primary);
+      overflow-x: hidden;
       line-height: 1.6;
     }
 
-    header {
-      text-align: center;
-      padding: 80px 20px 50px;
+    /* Animated gradient background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
     }
 
+    /* ===== CONTAINER ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
     h1 {
-      font-size: 48px;
-      font-weight: 700;
-      background: linear-gradient(90deg, #38bdf8, #6366f1);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-gold));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-    }
-
-    .subtitle {
-      margin-top: 12px;
-      color: #94a3b8;
-      font-size: 16px;
-    }
-
-    .links {
-      margin-top: 20px;
-    }
-
-    .links a {
-      margin: 0 10px;
-      color: #38bdf8;
-      font-weight: 500;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .links a:hover {
-      color: #6366f1;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    section {
-      margin-top: 60px;
+      background-clip: text;
     }
 
     h2 {
-      font-size: 22px;
-      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 3rem;
       position: relative;
       display: inline-block;
     }
 
-    h2::after {
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* ===== HEADER / HERO ===== */
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 20px;
+    }
+
+    header::after {
       content: '';
       position: absolute;
-      width: 50%;
-      height: 2px;
-      background: #38bdf8;
-      bottom: -5px;
-      left: 0;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 30% 30%, rgba(6, 182, 212, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 70% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 40%);
+      pointer-events: none;
     }
 
-    .card {
-      background: rgba(30, 41, 59, 0.5);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 25px;
-      margin: 20px 0;
-      border-radius: 16px;
-      transition: all 0.3s ease;
+    .hero {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      animation: heroEnter 1s ease-out;
     }
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      margin: 1.5rem 0;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
-    .card h3 { margin-bottom: 10px; }
+    .hero-tagline {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 1.5rem auto 3rem;
+      line-height: 1.9;
+    }
+
+    /* ===== BUTTONS ===== */
+    .button-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
 
     .btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 16px;
-      border-radius: 8px;
-      background: linear-gradient(90deg, #38bdf8, #6366f1);
-      color: white;
+      padding: 1rem 2rem;
+      border-radius: 12px;
       text-decoration: none;
-      font-size: 14px;
-      margin-right: 10px;
-      transition: 0.3s;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition-smooth);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      gap: 0.5rem;
     }
 
-    .btn:hover {
-      transform: scale(1.05);
-      opacity: 0.9;
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-gold));
+      color: var(--primary);
+      box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
     }
 
-    .skills {
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(6, 182, 212, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(12px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(6, 182, 212, 0.1);
+      border-color: var(--accent-cyan);
+      transform: translateY(-4px);
+    }
+
+    /* ===== SOCIAL LINKS ===== */
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .social-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-cyan);
+      transition: width 0.3s ease;
+    }
+
+    .social-link:hover {
+      color: var(--accent-cyan);
+    }
+
+    .social-link:hover::after {
+      width: 100%;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    section:nth-child(even) {
+      background: linear-gradient(180deg, rgba(30, 41, 59, 0.4) 0%, transparent 100%);
+    }
+
+    /* ===== SECTION TITLE ===== */
+    .section-header {
+      margin-bottom: 4rem;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 1rem;
+    }
+
+    .section-title::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-gold));
+      border-radius: 10px;
+      animation: underlineExpand 0.8s ease-out forwards;
+      animation-delay: 0.2s;
+    }
+
+    /* ===== GLASS EFFECT ===== */
+    .glass {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 2.5rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: var(--transition-smooth);
+    }
+
+    .glass:hover {
+      border-color: rgba(6, 182, 212, 0.3);
+      background: rgba(30, 41, 59, 0.75);
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about-content {
+      margin-bottom: 3rem;
+    }
+
+    .about-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      padding: 1.75rem;
+      border-radius: 16px;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+
+    .stat-card:hover {
+      background: rgba(6, 182, 212, 0.08);
+      border-color: var(--accent-cyan);
+      transform: translateY(-6px);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* ===== PROJECTS SECTION ===== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-gold), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-12px);
+      border-color: rgba(6, 182, 212, 0.3);
+      box-shadow: 0 20px 50px rgba(6, 182, 212, 0.15);
+      background: rgba(30, 41, 59, 0.85);
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .project-desc {
+      flex-grow: 1;
+      margin-bottom: 1.5rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .tech-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
     }
 
-    .skill {
-      background: rgba(56,189,248,0.15);
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-size: 13px;
+    .tech-tag {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(251, 191, 36, 0.1));
+      color: var(--accent-cyan);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      transition: var(--transition-smooth);
     }
 
-    footer {
+    .tech-tag:hover {
+      background: rgba(6, 182, 212, 0.2);
+      border-color: var(--accent-cyan);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .project-links .btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      flex: 1;
+      min-width: 120px;
+    }
+
+    /* ===== SKILLS SECTION ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem 1rem;
+      border-radius: 14px;
       text-align: center;
-      margin-top: 80px;
-      padding: 20px;
-      font-size: 14px;
-      color: #94a3b8;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: var(--transition-smooth);
+      cursor: pointer;
+    }
+
+    .skill-item:hover {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.12), rgba(251, 191, 36, 0.08));
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      transform: translateY(-6px);
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact-container {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-text {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      margin-top: 4rem;
+    }
+
+    footer p {
+      color: var(--text-muted);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes heroEnter {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes underlineExpand {
+      to {
+        width: 100%;
+      }
+    }
+
+    /* Stagger animations for cards */
+    .projects-grid .project-card {
+      animation: fadeInUp 0.8s ease-out backwards;
+    }
+
+    .projects-grid .project-card:nth-child(1) { animation-delay: 0.1s; }
+    .projects-grid .project-card:nth-child(2) { animation-delay: 0.2s; }
+    .projects-grid .project-card:nth-child(3) { animation-delay: 0.3s; }
+
+    .skills-grid .skill-item {
+      animation: fadeInUp 0.8s ease-out backwards;
+    }
+
+    .skills-grid .skill-item:nth-child(1) { animation-delay: 0.1s; }
+    .skills-grid .skill-item:nth-child(2) { animation-delay: 0.15s; }
+    .skills-grid .skill-item:nth-child(3) { animation-delay: 0.2s; }
+    .skills-grid .skill-item:nth-child(4) { animation-delay: 0.25s; }
+    .skills-grid .skill-item:nth-child(5) { animation-delay: 0.3s; }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .hero-tagline {
+        font-size: 1rem;
+      }
+
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .socials {
+        gap: 1.5rem;
+      }
+
+      section {
+        padding: 3rem 0;
+      }
+
+      .glass {
+        padding: 2rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project-links .btn {
+        min-width: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.95rem;
+      }
+
+      .hero-tagline {
+        font-size: 0.95rem;
+        margin: 1rem auto 2rem;
+      }
+
+      .button-group {
+        gap: 0.75rem;
+        margin: 2rem 0;
+      }
+
+      .socials {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .glass {
+        padding: 1.5rem;
+        border-radius: 16px;
+      }
+
+      .projects-grid {
+        gap: 1.5rem;
+      }
+
+      .project-card {
+        padding: 1.5rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
+<!-- ===== HEADER / HERO ===== -->
 <header>
-  <h1>Sachin Ranjan - Software Developer</h1>
-  <p class="subtitle">B.Tech CSE | Backend Developer | AI/ML Enthusiast | IEEE Published Author</p>
+  <div class="container">
+    <div class="hero">
+      <h1>Sachin Ranjan</h1>
+      <p class="hero-subtitle">Software Development Enthusiast | Java & DSA | AI Projects</p>
+      <p class="hero-tagline">
+        Passionate about Software Development, Problem Solving, and building impactful real-world applications using Java, DSA, and Artificial Intelligence.
+      </p>
 
-  <div class="links">
-    <a href="https://github.com/Sachinranjan1905" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/sachin-ranjan-8281a1329/" target="_blank">LinkedIn</a>
-    <a href="https://orcid.org/0009-0003-9859-2840" target="_blank">ORCID</a>
-    <a href="https://scholar.google.com/citations?hl=en&user=4HFFouAAAAAJ" target="_blank">Scholar</a>
+      <div class="button-group">
+        <a href="Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+          ↓ Download Resume
+        </a>
+        <a href="#projects" class="btn btn-secondary">
+          View My Work
+        </a>
+      </div>
+
+      <div class="socials">
+        <a href="https://github.com/Sachinranjan1905" class="social-link" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/sachin-ranjan-8281a1329/" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://leetcode.com/" class="social-link" target="_blank" rel="noopener">LeetCode</a>
+        <a href="https://www.hackerrank.com/" class="social-link" target="_blank" rel="noopener">HackerRank</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=4HFFouAAAAAJ" class="social-link" target="_blank" rel="noopener">Google Scholar</a>
+      </div>
+    </div>
   </div>
 </header>
 
-<div class="container">
+<!-- ===== ABOUT SECTION ===== -->
+<section id="about">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">About Me</h2>
+    </div>
 
-<section>
-  <h2>About</h2>
-  <p>
-    Sachin Ranjan is a B.Tech Computer Science student at Quantum University and an aspiring Software Developer specializing in backend development, data structures, and machine learning. He has experience in C++, Java, Python, and building real-world AI/ML applications, including an IEEE published research project.
-  </p>
-</section>
+    <div class="glass">
+      <div class="about-content">
+        <p>
+          I'm a B.Tech Computer Science student at Quantum University with a passion for building scalable software systems and exploring the intersection of AI and real-world applications.
+        </p>
+        <p>
+          My expertise spans Java programming, data structures & algorithms, and software engineering concepts focused on building efficient and scalable applications.
+        </p>
+        <p>
+          My IEEE-published research on Mushroom Detection & Classification using YOLO and CNN has equipped me with hands-on experience in computer vision, optimization techniques, and production-level AI system implementation.
+        </p>
+      </div>
 
-<section>
-  <h2>Projects</h2>
-
-  <div class="card">
-    <h3>Mushroom Detection & Classification System</h3>
-    <p>Developed a deep learning system using YOLO and CNN for mushroom detection and classification.</p>
-    <a class="btn" href="https://mushroom-detection-app-gcxniv72o38u8rkxbw4kvc.streamlit.app/" target="_blank">Live App</a>
-    <a class="btn" href="https://github.com/Sachinranjan1905/mushroom-detection-streamlit" target="_blank">GitHub</a>
-  </div>
-
-  <div class="card">
-    <h3>AI Crop Recommendation System</h3>
-    <p>Built a machine learning based crop recommendation system using Streamlit.</p>
-    <a class="btn" href="https://sachinranjan1905-ai-crop-recommendation-system-appapp-djiok1.streamlit.app/" target="_blank">Live App</a>
-    <a class="btn" href="https://github.com/Sachinranjan1905/AI-Crop-Recommendation-System" target="_blank">GitHub</a>
-  </div>
-
-  <div class="card">
-    <h3>Sudoku Solver</h3>
-    <p>Implemented a Sudoku Solver in C++ using backtracking algorithm.</p>
-  </div>
-
-</section>
-
-<section>
-  <h2>Skills</h2>
-  <div class="skills">
-    <span class="skill">Java</span>
-    <span class="skill">C++</span>
-    <span class="skill">Python</span>
-    <span class="skill">DSA</span>
-    <span class="skill">DBMS</span>
-    <span class="skill">Machine Learning</span>
-    <span class="skill">Backend Development</span>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">5★</div>
+          <div class="stat-label">HackerRank Rating</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">IEEE</div>
+          <div class="stat-label">Published Author</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">DSA</div>
+          <div class="stat-label">Problem Solving</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">AI/ML</div>
+          <div class="stat-label">Real-World Projects</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section>
-  <h2>Resume</h2>
-  <a class="btn" href="Resume.pdf" target="_blank">Download Resume</a>
+<!-- ===== PROJECTS SECTION ===== -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Featured Projects</h2>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <h3 class="project-title">Mushroom Detection & Classification</h3>
+        <p class="project-desc">
+          AI-powered system using YOLO and CNN models for real-time mushroom detection and classification. Features optimized preprocessing pipeline and high-accuracy predictions.
+        </p>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">YOLO</span>
+          <span class="tech-tag">CNN</span>
+          <span class="tech-tag">Computer Vision</span>
+        </div>
+        <div class="project-links">
+          <a href="https://mushroom-detection-app-gcxniv72o38u8rkxbw4kvc.streamlit.app/" class="btn btn-primary" target="_blank" rel="noopener">Live Demo</a>
+          <a href="https://github.com/Sachinranjan1905/mushroom-detection-streamlit" class="btn btn-secondary" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <h3 class="project-title">AI Crop Recommendation System</h3>
+        <p class="project-desc">
+          Machine learning application that predicts optimal crop recommendations based on soil conditions, weather patterns, and environmental factors using predictive models.
+        </p>
+        <div class="tech-tags">
+          <span class="tech-tag">Machine Learning</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Streamlit</span>
+        </div>
+        <div class="project-links">
+          <a href="https://sachinranjan1905-ai-crop-recommendation-system-appapp-djiok1.streamlit.app/" class="btn btn-primary" target="_blank" rel="noopener">Live Demo</a>
+          <a href="https://github.com/Sachinranjan1905/AI-Crop-Recommendation-System" class="btn btn-secondary" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <h3 class="project-title">Sudoku Solver</h3>
+        <p class="project-desc">
+          Optimized Sudoku solving algorithm using recursive backtracking with constraint satisfaction techniques. Demonstrates advanced problem-solving and algorithmic optimization.
+        </p>
+        <div class="tech-tags">
+          <span class="tech-tag">C++</span>
+          <span class="tech-tag">Algorithms</span>
+          <span class="tech-tag">DSA</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="btn btn-primary" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2>Contact</h2>
-  <p>Email: sranjan2219@gmail.com</p>
+<!-- ===== SKILLS SECTION ===== -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Skills & Expertise</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-item">Java Programming</div>
+      <div class="skill-item">Data Structures</div>
+      <div class="skill-item">Algorithms</div>
+      <div class="skill-item">Python</div>
+      <div class="skill-item">Machine Learning</div>
+      <div class="skill-item">Computer Vision</div>
+      <div class="skill-item">SQL & Databases</div>
+      <div class="skill-item">DBMS</div>
+      <div class="skill-item">Object-Oriented Design</div>
+      <div class="skill-item">Git & GitHub</div>
+      <div class="skill-item">System Design</div>
+      <div class="skill-item">Problem Solving</div>
+    </div>
+  </div>
 </section>
 
-</div>
+<!-- ===== CONTACT SECTION ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Get In Touch</h2>
+    </div>
 
+    <div class="contact-container">
+      <p class="contact-text">
+        I'm always open to interesting projects, collaborations, and opportunities. Feel free to reach out!
+      </p>
+      <p class="contact-text" style="font-weight: 600; color: var(--accent-cyan);">
+        sranjan2219@gmail.com
+      </p>
+      <a href="mailto:sranjan2219@gmail.com" class="btn btn-primary">
+        Send Email
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
 <footer>
-  © 2026 Sachin Ranjan — Software Developer Portfolio
+  <div class="container">
+    <p>© 2026 Sachin Ranjan — Software Development Portfolio. All rights reserved.</p>
+  </div>
 </footer>
 
 </body>
